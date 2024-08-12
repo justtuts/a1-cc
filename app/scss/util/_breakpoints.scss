@@ -1,0 +1,37 @@
+@use 'functions' as f;
+
+//Sass map to store breakpoint values - similar to an javascript object, in that it stores key/value pairs
+// min-width values for mobile first design
+//43.75em (700px), 56.25em (900px), 90em (1440px)
+$breakpoints-up: (
+	'medium': f.em(700),
+	//43.75em,
+	'large': f.em(900),
+	//56.25em,
+	'xlarge': f.em(1440),
+	//90em,
+);
+//Max width breakpoints - made slightly smaller than the min-width breakpoints to avoid rule conflicts
+//699.98px , 899.98px, 1439.98px
+$breakpoints-down: (
+	'small': f.em(699.98),
+	// 43.74875em,
+	'medium': f.em(899.98),
+	// 56.24875em,
+	'large': f.em(1439.98),
+	//89.99875em,
+);
+
+//NOTE: map-get() is a Sass function to retrieve the contents of the Sass Map
+// 1st parameter is the name of the Sass map, 2nd parameter is a variable to contain what ever value from the Sass map when @including the mixin
+@mixin breakpoint($size) {
+	@media (min-width: map-get($breakpoints-up, $size)) {
+		@content;
+	}
+}
+
+@mixin breakpoint-down($size) {
+	@media (max-width: map-get($breakpoints-down, $size)) {
+		@content;
+	}
+}

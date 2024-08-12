@@ -1,0 +1,59 @@
+@use '../util/' as u;
+
+//sass placeholder
+%widget {
+	padding: u.rem(16);
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: auto auto;
+	gap: u.rem(40);
+	// max-width: 1000px;
+	width: min(100% - u.rem(40), u.rem(1000));
+	margin-inline: auto;
+
+	@include u.breakpoint(large) {
+		grid-template-columns: 2fr 1fr;
+		grid-template-rows: auto;
+	}
+
+	&__main,
+	&__aside {
+		padding: u.rem(40);
+	}
+
+	&__main {
+		background-color: hsl(240, 53%, 37%);
+
+		@include u.breakpoint(medium) {
+			background-color: hsl(120, 66%, 26%);
+		}
+
+		@include u.breakpoint(large) {
+			background-color: hsl(39, 71%, 32%);
+		}
+	}
+	&__aside {
+		@include u.breakpoint-down(medium) {
+			text-align: center;
+		}
+	}
+	&__widget {
+		// $widget: &;
+		&--magenta {
+			//adding Sass placeholder content to .grid__widget--magenta
+			@extend %widget;
+			background-color: hsl(300, 29%, 43%);
+		}
+
+		&--green {
+			// @extend #{$widget};
+			// @extend .grid__widget;
+			@extend %widget;
+			//adding Sass placeholder content to .grid__widget--green
+			background-color: hsl(120, 65%, 32%);
+		}
+	}
+}
