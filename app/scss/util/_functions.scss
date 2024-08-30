@@ -1,5 +1,6 @@
 @use 'sass:math';
 
+//convert pixel to rem
 @function rem($pixel) {
 	//test to see if a unit is accidentally included as part of the $pixel parameter. $pixel can ONLY be a number
 	@if math.is-unitless($pixel) {
@@ -10,6 +11,7 @@
 	}
 }
 
+//convert pixel to em
 @function em($pixel) {
 	//test to see if a unit is accidentally included as part of the $pixel parameter. $pixel can ONLY be a number
 	@if math.is-unitless($pixel) {

@@ -1,6 +1,6 @@
 @use 'functions' as f;
 
-//Sass map to store breakpoint values - similar to an javascript object, in that it stores key/value pairs
+//Sass map to store breakpoint values - similar to a javascript object, in that it stores key/value pairs
 // min-width values for mobile first design
 //43.75em (700px), 56.25em (900px), 90em (1440px)
 $breakpoints-up: (
