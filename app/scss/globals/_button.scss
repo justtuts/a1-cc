@@ -24,6 +24,16 @@
 		}
 	}
 
+	&.white {
+		background-color: var(--button-primary-white-bg);
+		border: u.rem(2) solid var(--button-primary-white-bg);
+
+		&:hover {
+			background-color: var(--button-primary-white-bg-hover);
+			border-color: var(--button-primary-white-bg-hover);
+		}
+	}
+
 	&.secondary {
 		background-color: var(--button-secondary-bg);
 		color: var(--button-secondary-text);
