@@ -35,20 +35,34 @@
 	}
 
 	&__link {
+		display: block;
+		line-height: 1;
 		font-size: u.rem(14);
 		font-weight: 700;
 		color: var(--text-light);
 		text-transform: uppercase;
 		letter-spacing: 0.05em;
 
-		&:hover {
-			text-decoration: underline;
-			text-decoration-thickness: 2px;
-			text-underline-offset: 4px;
-		}
-
 		@include u.breakpoint(large) {
 			font-size: u.rem(16);
+		}
+
+		&::after {
+			content: '';
+			display: block;
+			height: 3px;
+			margin-top: 3px;
+			background: linear-gradient(
+				to right,
+				var(--link-gradient1),
+				var(--link-gradient2) 80%
+			);
+			opacity: 0;
+			transition: opacity 250ms ease-in-out;
+		}
+
+		&:hover::after {
+			opacity: 1;
 		}
 	}
 }
