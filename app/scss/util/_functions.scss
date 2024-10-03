@@ -4,7 +4,7 @@
 @function rem($pixel) {
 	//test to see if a unit is accidentally included as part of the $pixel parameter. $pixel can ONLY be a number
 	@if math.is-unitless($pixel) {
-		//divide $pixel by 16 to return rems
+		//divide $pixel by 16 to return value, concatenate "rem" to set unit of measurment as rems
 		@return math.div($pixel, 16) + rem;
 	} @else {
 		@error 'Don\'t use units when using the rem() function; only numbers';
@@ -15,7 +15,7 @@
 @function em($pixel) {
 	//test to see if a unit is accidentally included as part of the $pixel parameter. $pixel can ONLY be a number
 	@if math.is-unitless($pixel) {
-		//divide $pixel by 16 to return ems
+		//divide $pixel by 16 to return value, concatenate "em" to set unit of measurment as ems
 		@return math.div($pixel, 16) + em;
 	} @else {
 		@error 'Don\'t use units when using the em() function; only numbers';
