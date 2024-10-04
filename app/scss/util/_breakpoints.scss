@@ -2,24 +2,29 @@
 
 //Sass map to store breakpoint values - similar to a javascript object, in that it stores key/value pairs
 // min-width values for mobile first design
-//43.75em (700px), 56.25em (900px), 90em (1440px)
+//43.75em (700px), 56.25em (900px), 68.75em (1100px), 90em (1440px)
 $breakpoints-up: (
 	'medium': f.em(700),
 	//43.75em,
 	'large': f.em(900),
 	//56.25em,
-	'xlarge': f.em(1440),
+	'xlarge': f.em(1100),
+	//68.75em
+	'xxlarge': f.em(1440),
 	//90em,
 );
 //Max width breakpoints - made slightly smaller than the min-width breakpoints to avoid rule conflicts
-//452.98px, 699.98px, 899.98px, 1439.98px
+//452.98px, 699.98px, 899.98px, 1099.98px, 1439.98px
 $breakpoints-down: (
 	'xsmall': f.em(452.98),
+	// 28.31em,
 	'small': f.em(699.98),
 	// 43.74875em,
 	'medium': f.em(899.98),
 	// 56.24875em,
-	'large': f.em(1439.98),
+	'large': f.em(199.98),
+	//68.75em,
+	'xlarge': f.em(1439.98),
 	//89.99875em,
 );
 
