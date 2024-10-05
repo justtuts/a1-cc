@@ -19,15 +19,41 @@
 		);
 	}
 
-	&__wrapper {
-	}
+	&__form {
+		display: grid;
+		grid-template-areas:
+			'label'
+			'text'
+			'button';
+		max-width: u.rem(350);
+		margin-inline: auto;
 
-	&__title {
+		@include u.breakpoint(medium) {
+			grid-template-areas:
+				'label label'
+				'text button';
+			justify-content: center;
+		}
 	}
-
-	&__description {
+	&__label {
+		grid-area: label;
+		justify-self: start;
+		margin-block-end: 12px;
 	}
+	&__text {
+		grid-area: text;
 
+		@include u.breakpoint-down(small) {
+			margin-block-end: 20px;
+		}
+
+		@include u.breakpoint(medium) {
+			margin-inline-end: 20px;
+			width: u.rem(300);
+		}
+	}
 	&__button {
+		grid-area: button;
+		justify-self: center;
 	}
 }

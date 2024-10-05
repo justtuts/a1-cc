@@ -19,6 +19,11 @@ body {
   color: var(--text-dark);
 }
 
+input,
+button {
+  font-family: "Source Sans 3", sans-serif;
+}
+
 img {
   display: block;
   width: 100%;
@@ -208,6 +213,19 @@ a {
   max-width: 70ch;
   margin-inline: auto;
   margin-bottom: 2.5rem;
+}
+
+.form__label, .form__text {
+  font-size: 1.125rem;
+  line-height: 1;
+}
+.form__label {
+  font-weight: 700;
+}
+.form__text {
+  padding: 0.5rem 1.25rem;
+  border: none;
+  border-radius: 5px;
 }
 
 .wrapper {
@@ -539,6 +557,47 @@ a {
     background: linear-gradient(to right, var(--gradient1), var(--gradient2) 55%, var(--gradient3) 110%);
   }
 }
+.fw-cta__form {
+  display: grid;
+  grid-template-areas: "label" "text" "button";
+  max-width: 21.875rem;
+  margin-inline: auto;
+}
+@media (min-width: 43.75em) {
+  .fw-cta__form {
+    grid-template-areas: "label label" "text button";
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+.fw-cta__label {
+  grid-area: label;
+  justify-self: start;
+  -webkit-margin-after: 12px;
+          margin-block-end: 12px;
+}
+.fw-cta__text {
+  grid-area: text;
+}
+@media (max-width: 43.74875em) {
+  .fw-cta__text {
+    -webkit-margin-after: 20px;
+            margin-block-end: 20px;
+  }
+}
+@media (min-width: 43.75em) {
+  .fw-cta__text {
+    -webkit-margin-end: 20px;
+            margin-inline-end: 20px;
+    width: 18.75rem;
+  }
+}
+.fw-cta__button {
+  grid-area: button;
+  justify-self: center;
+}
+
 .footer__wrapper {
   display: grid;
   grid-template-columns: repeat(2, auto);
