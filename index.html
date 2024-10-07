@@ -18,7 +18,8 @@
 			rel="stylesheet"
 		/>
 		<link rel="stylesheet" href="/dist/style.css" />
-		<script src="/app/js/script.js"></script>
+		<script src="/app/js/bodyScrollLock.min.js" defer></script>
+		<script src="/app/js/script.js" defer></script>
 	</head>
 	<body>
 		<a href="#main" class="visually-hidden">Skip to content</a>
@@ -35,17 +36,40 @@
 					/>
 				</a>
 				<nav>
-					<ul class="topnav__links">
-						<li class="topnav__item">
-							<a href="#" class="topnav__link">Features</a>
-						</li>
-						<li class="topnav__item">
-							<a href="#" class="topnav__link">Pricing</a>
-						</li>
-						<li class="topnav__item">
-							<a href="#" class="topnav__link">About</a>
-						</li>
-					</ul>
+					<span id="nav-label" hidden>navigation</span>
+					<div id="overlay" class="topnav__overlay"></div>
+					<button
+						id="btnOpen"
+						class="topnav__open"
+						aria-expanded="false"
+						aria-labelledby="nav-label"
+					>
+						<img src="/img/hamburger.svg" width="30" height="23" alt="" />
+					</button>
+					<div
+						id="menuTopNav"
+						class="topnav__menu"
+						role="dialog"
+						aria-labelledby="nav-label"
+					>
+						<button id="btnClose" class="topnav__close">
+							<img src="/img/close-button.svg" width="26" height="26" alt="" />
+						</button>
+						<ul class="topnav__links">
+							<li class="topnav__item">
+								<a href="" class="topnav__link">Home</a>
+							</li>
+							<li class="topnav__item">
+								<a href="" class="topnav__link">Features</a>
+							</li>
+							<li class="topnav__item">
+								<a href="" class="topnav__link">Pricing</a>
+							</li>
+							<li class="topnav__item">
+								<a href="" class="topnav__link">About</a>
+							</li>
+						</ul>
+					</div>
 				</nav>
 			</div>
 		</header>
@@ -73,8 +97,8 @@
 								Mythos will enable you to discover the newest startups to invest
 								in. Powered by AI, used by millions of humans.
 							</p>
-							<a href="#" class="hero__button button primary">Free Trial</a
-							><a href="#" class="hero__button button secondary">Pricing</a>
+							<a href="" class="hero__button button primary">Free Trial</a
+							><a href="" class="hero__button button secondary">Pricing</a>
 						</div>
 					</div>
 				</section>
@@ -288,7 +312,7 @@
 				</section>
 			</article>
 		</main>
-		<footer class="footer">
+		<footer id="footer" class="footer">
 			<h2 class="visually-hidden">Footer</h2>
 			<div class="footer__wrapper wrapper">
 				<section class="footer__logo">
